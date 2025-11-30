@@ -77,17 +77,14 @@ $$
         \begin{bmatrix} 
                         {x^T} & 1 
         \end{bmatrix}
-
         \begin{bmatrix}
                         \tilde{M} & {a} \\
                         {a^T}     & {F}
         \end{bmatrix}
-
         \begin{bmatrix}
                         {x} \\
                         1
         \end{bmatrix}
-
         = 0.
 $$
 
