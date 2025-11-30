@@ -179,9 +179,11 @@ $$
 5. Solve quartic using `numpy.roots`  
 6. Keep real roots  
 7. For each λ compute:  
+
 $$
     {x}(\lambda) = (I + \lambda\tilde{M})^{-1} ({x_0} - \lambda {a})
 $$
+
 8. Compute distances  
 9. Choose min → closest, max → farthest  
 10. Plot ellipse + points + connecting lines  
