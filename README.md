@@ -156,9 +156,22 @@ Real λ values produce real candidate points on the ellipse.
 4. Construct quartic  
 
 $$
-    Q(\lambda) = \begin{bmatrix} P_1 \\ P_2 \end{bmatrix}^T \tilde{M} \begin{bmatrix} P_1 \\P_2 \end{bmatrix}
+    Q(\lambda) = 
+    \begin{bmatrix} 
+                    P_1 \\ 
+                    P_2 
+    \end{bmatrix}^T 
+    \tilde{M} 
+    \begin{bmatrix} 
+                    P_1 \\
+                    P_2 
+    \end{bmatrix}
     +
-    2 P_3 {a^T} \begin{bmatrix} P_1 \\ P_2 \end{bmatrix}
+    2 {P_3} {a^T} 
+    \begin{bmatrix} 
+                    P_1 \\ 
+                    P_2 
+    \end{bmatrix}
     +
     {F} {P_3^2}
 $$
@@ -166,12 +179,9 @@ $$
 5. Solve quartic using `numpy.roots`  
 6. Keep real roots  
 7. For each λ compute:  
-   $$
-   \mathbf{x}(\lambda)
-   =
-   (I+\lambda\tilde{M})^{-1}
-   (\mathbf{x}_0 - \lambda \mathbf{a})
-   $$
+$$
+    {x}(\lambda) = (I + \lambda\tilde{M})^{-1} ({x_0} - \lambda {a})
+$$
 8. Compute distances  
 9. Choose min → closest, max → farthest  
 10. Plot ellipse + points + connecting lines  
@@ -190,7 +200,7 @@ $$
 - Real root:  
 
 $$
-            |\operatorname{Im}(\lambda)| < 10^{-8}
+            |{Im}(\lambda)| < 10^{-8}
 $$
 
 - Ellipse constraint check:  
