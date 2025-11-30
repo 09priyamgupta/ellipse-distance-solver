@@ -151,21 +151,18 @@ Real λ values produce real candidate points on the ellipse.
 # Algorithm Summary (Analytic)
 
 1. Input ellipse coefficients \(A,B,C,D,E,F\)  
-2. Validate ellipse using \(\det(\tilde{M})>0\)  
-3. Build polynomials \(P_1(\lambda), P_2(\lambda), P_3(\lambda)\)  
+2. Validate ellipse using $(\det(\tilde{M})>0)$  
+3. Build polynomials $(P_1(\lambda), P_2(\lambda), P_3(\lambda))$  
 4. Construct quartic  
-   $$
-   Q(\lambda)
-   =
-   \begin{bmatrix} P_1 \\ P_2 \end{bmatrix}^\top
-   \tilde{M}
-   \begin{bmatrix} P_1 \\ P_2 \end{bmatrix}
-   +
-   2 P_3 \,\mathbf{a}^\top
-   \begin{bmatrix} P_1 \\ P_2 \end{bmatrix}
-   +
-   F\, P_3^2
-   $$
+
+$$
+    Q(\lambda) = \begin{bmatrix} P_1 \\ P_2 \end{bmatrix}^T \tilde{M} \begin{bmatrix} P_1 \\P_2 \end{bmatrix}
+    +
+    2 P_3 {a^T} \begin{bmatrix} P_1 \\ P_2 \end{bmatrix}
+    +
+    {F} {P_3^2}
+$$
+
 5. Solve quartic using `numpy.roots`  
 6. Keep real roots  
 7. For each λ compute:  
@@ -191,21 +188,23 @@ Real λ values produce real candidate points on the ellipse.
 
 ### Tolerances
 - Real root:  
-  $$
-                |\operatorname{Im}(\lambda)| < 10^{-8}
-  $$
+
+$$
+            |\operatorname{Im}(\lambda)| < 10^{-8}
+$$
 
 - Ellipse constraint check:  
-  $$
-                |g(\mathbf{x})| < 10^{-6}
-  $$
+
+$$
+            |g(\mathbf{x})| < 10^{-6}
+$$
 
 ### Stability note
-Ensure:
+Before matrix inversion, ensure:
+
 $$
                 \det(I + {\lambda} {\tilde{M}}) \neq 0
 $$
-before matrix inversion.
 
 ---
 
